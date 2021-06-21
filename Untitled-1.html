@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1></h1>
+</body>
+<script>
+    var myDate = new Date()
+    var  _h6 = document.getElementsByClassName('h1')
+    console.log(_h6)
+    _h6.text = 123;
+    console.log(myDate.toLocaleDateString())
+</script>
+</html>
+
+{
+    "button":[
+    {	
+         "type":"click",
+         "name":"今日歌曲",
+         "key":"V1001_TODAY_MUSIC"
+     },
+     {
+          "name":"菜单",
+          "sub_button":[
+          {	
+              "type":"view",
+              "name":"搜索",
+              "url":"http://www.soso.com/"
+           },
+           {
+              "type":"click",
+              "name":"赞一下我们",
+              "key":"V1001_GOOD"
+           }]
+      }]
+}
