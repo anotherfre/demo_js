@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 按下面的要求写代码，一条对应一行代码：
+
+    // 创建一个空的对象 user。
+    // 为这个对象增加一个属性，键是 name，值是 John。
+    // 再增加一个属性，键是 surname，值是 Smith。
+    // 把键为 name 的属性的值改成 Pete。
+    // 删除这个对象中键为 name 的属性。 
+
+
+
+
+    let user = new Object();
+    user.name = 'John';
+    user.surname = 'Smith';
+    user.name = 'Pete';
+    delete user.name
+    console.log(user)
+
+
+
+
+    // 写一个 isEmpty(obj) 函数，当对象没有属性的时候返回 true，否则返回 false。
+    function isEmpty(obj) {
+        for (let key in obj) {
+
+            return false
+        }
+        return true
+
+    }
+
+
+    let human = {};
+    // alert(isEmpty(human))
+    human.name = 'Maks'
+    // alert(isEmpty(human))
+
+
+
+    // 我们有一个保存着团队成员工资的对象：
+    let salaries = {
+        John: 100,
+        Ann: 160,
+        Pete: 130
+    }
+    function sum_sal(obj) {
+        let sum = 0
+        for(let key in obj){
+            sum += obj[key]
+        }
+        return sum
+    }
+    console.log("total: " , sum_sal(salaries))
+</script>
+
+</html>
