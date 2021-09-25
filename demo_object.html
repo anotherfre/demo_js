@@ -97,20 +97,20 @@
 
 
     // 构造器和操作符 "new"
-//     创建 new Calculator
-//     重要程度: 5
-// 创建一个构造函数 Calculator，它创建的对象中有三个方法：
+    //     创建 new Calculator
+    //     重要程度: 5
+    // 创建一个构造函数 Calculator，它创建的对象中有三个方法：
 
-//     read() 使用 prompt 请求两个值并把它们记录在对象的属性中。
-//     sum() 返回这些属性的总和。
-//     mul() 返回这些属性的乘积。
-//     例如：
+    //     read() 使用 prompt 请求两个值并把它们记录在对象的属性中。
+    //     sum() 返回这些属性的总和。
+    //     mul() 返回这些属性的乘积。
+    //     例如：
 
-//     let calculator = new Calculator();
-//     calculator.read();
+    //     let calculator = new Calculator();
+    //     calculator.read();
 
-//     alert("Sum=" + calculator.sum());
-//     alert("Mul=" + calculator.mul());
+    //     alert("Sum=" + calculator.sum());
+    //     alert("Mul=" + calculator.mul());
     function Newcalc() {
 
 
@@ -128,9 +128,27 @@
         }
     }
     let newcalc = new Newcalc()
-    calc.read(3,2)
+    calc.read(3, 2)
     console.log(calc.mul())
     console.log(calc.sum())
+
+    //     闭包 sum  闭包： 内部函数可以调用外部函数的变量
+    //     重要程度: 4
+    // 编写一个像 sum(a)(b) = a + b 这样工作的 sum 函数。
+
+    //     是的，就是这种通过双括号的方式（并不是错误）。
+
+    //     举个例子：
+
+    //     sum(1)(2) = 3
+    //     sum(5)(-1) = 4 
+    function sum(paramA) {
+        return function (paramB) {
+            return paramA + paramB
+        }
+    }
+    console.log("sum(1)(3):", sum(1)(3))
+
 </script>
 
 </html>
