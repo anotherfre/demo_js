@@ -171,17 +171,23 @@
         let num = from
         let timeId = setInterval(function () {
             console.log(num)
-            if (num == to){
+            if (num == to) {
                 clearInterval(timeId)
             }
             num++
         }, 1000)
-        
+
     }
 
     printNumbers(0, 10)
 
-
+let Hi =  {
+    name : 'rick',
+    sayHi: ()=>{
+    console.log("Hi "+ this.name)
+}
+}
+Hi.sayHi()
 
 </script>
 
