@@ -149,6 +149,40 @@
     }
     console.log("sum(1)(3):", sum(1)(3))
 
+
+    // 调度：setTimeout 和 setInterval
+    function testTimeout(params) {
+        console.log(1)
+    }
+    setTimeout(testTimeout, 3000)
+    setTimeout(() => {
+        testTimeout()
+    }, 5000);
+
+    //     每秒输出一次
+    // 重要程度: 5
+    // 编写一个函数 printNumbers(from, to)，使其每秒输出一个数字，数字从 from 开始，到 to 结束。
+
+    // 使用以下两种方法来实现。
+
+    // 使用 setInterval。
+
+    function printNumbers(from, to) {
+        let num = from
+        let timeId = setInterval(function () {
+            console.log(num)
+            if (num == to){
+                clearInterval(timeId)
+            }
+            num++
+        }, 1000)
+        
+    }
+
+    printNumbers(0, 10)
+
+
+
 </script>
 
 </html>
