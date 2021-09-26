@@ -181,18 +181,30 @@
 
     printNumbers(0, 10)
 
-let Hi =  {
-    name : 'rick',
-    sayHi: ()=>{
-    console.log("Hi "+ this.name)
-}
-}
-Hi.sayHi()
+    let Hi = {
+        name: 'rick',
+        sayHi: () => {
+            console.log("Hi " + this.name)
+        }
+    }
+    Hi.sayHi()
 
-let sayEi = (name)=>{
-    console.log('HEY ', name)
-}
-sayEi('maktub')
+    let sayEi = (name) => {
+        console.log('HEY ', name)
+    }
+    sayEi('maktub')
+
+    // try catch
+
+    try {
+        lalala
+    }
+    catch (err) {
+        console.log(err)
+    }
+    finally{
+        console.log('try catch test')
+    }
 </script>
 
 </html>
