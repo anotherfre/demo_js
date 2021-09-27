@@ -9,13 +9,31 @@
 </head>
 
 <body>
-
+    <div>Users:</div>
+    <ul>
+        <li>John</li>
+        <li>Pete</li>
+    </ul>
+    <div data-widget-name="menu">Choose the genre</div>
 </body>
 <script>
     document.body.style.background = 'red';
     setTimeout(() => {
-        document.body.style.background = 'blue'
+        document.body.style.background = 'white'
     }, 3000);
+
+    // 对于以下各项，请给出至少一种访问方式：
+
+    // <div> DOM 节点？
+    //     <ul> DOM 节点？
+    //         第二个 <li> 节点（即包含 Pete 的节点）？
+    let div = document.body.getElementsByTagName('div')
+    let ul = document.body.getElementsByTagName('ul')
+    let li = document.body.getElementsByTagName('li')[1]
+    
+    // 获取属性的值
+    // 写代码，从文档（document）中获取带有 data-widget-name 特性（attribute）的元素，并读取它的值。
+    document.getElementsByTagName('div')[1].getAttribute('data-widget-name')
 </script>
 
 </html>
