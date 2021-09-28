@@ -15,8 +15,15 @@
         <li>Pete</li>
     </ul>
     <div data-widget-name="menu">Choose the genre</div>
+
+    <div id='clock'>
+        <span id='hours'>00:</span>
+        <span id='min'>00:</span>
+        <span id='sec'>00</span>
+    </div>
 </body>
 <script>
+
     document.body.style.background = 'red';
     setTimeout(() => {
         document.body.style.background = 'white'
@@ -30,10 +37,58 @@
     let div = document.body.getElementsByTagName('div')
     let ul = document.body.getElementsByTagName('ul')
     let li = document.body.getElementsByTagName('li')[1]
-    
+
     // 获取属性的值
     // 写代码，从文档（document）中获取带有 data-widget-name 特性（attribute）的元素，并读取它的值。
     document.getElementsByTagName('div')[1].getAttribute('data-widget-name')
+
+    // 添加元素
+    let new_div = document.createElement('div')
+    new_div.append('this is append div')
+    let origin_div = document.getElementsByTagName('div')
+    origin_div[1].append(new_div)
+
+    //     清除元素
+    //     重要程度: 5
+    // 创建一个函数 clear(elem) 用来移除元素里的内容。
+    let clear = (node) => {
+        node.remove()
+    }
+    setTimeout(() => {
+        clear(new_div)
+    }, 3000);
+
+    // 时钟demo
+    
+
+    let format_time = (time) => {
+        if (time < 10) {
+            time = '0' + time
+        }
+        return time
+    }
+    let update_time = () => {
+        let date = new Date()
+        let hours = date.getHours()
+        hours = format_time(hours)
+        span_hours = document.getElementById('hours')
+        span_hours.textContent = hours + ':'
+
+        let min = date.getMinutes()
+        min = format_time(min)
+        span_min = document.getElementById('min')
+        span_min.textContent = min + ':'
+
+        let sec = date.getSeconds()
+        sec = format_time(sec)
+        span_sec = document.getElementById('sec')
+        span_sec.innerHTML = sec
+        // console.log(hours, min, sec)
+    }
+    setInterval(() => {
+        update_time()
+    }, 1000);
+
 </script>
 
 </html>
