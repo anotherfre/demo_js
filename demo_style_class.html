@@ -51,6 +51,13 @@
 
     console.log(scrollBot)
     document.body.style.height = '3000px'
+
+    // 窗口滚动
+    let currentY = window.pageYOffset
+    console.log(currentY)
+    document.documentElement.scrollBy(0, 100)
+    console.log(window.pageYOffset)
+    document.body.style.overflow = 'hidden'
 </script>
 
 </html>
