@@ -43,6 +43,14 @@
         let new_div = document.getElementsByClassName('notification')[0]
         new_div.style.display = 'none'
     }, 1500);
+
+    //     elem.scrollTop 属性是从顶部滚动出来的部分的大小。如何获得底部滚动的大小（我们称其为 scrollBottom）？
+
+    // 编写适用于任意 elem 的代码。
+    let scrollBot = document.documentElement.scrollHeight - document.documentElement.scrollTop - document.documentElement.clientHeight
+
+    console.log(scrollBot)
+    document.body.style.height = '3000px'
 </script>
 
 </html>
