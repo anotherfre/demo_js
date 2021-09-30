@@ -11,6 +11,8 @@
 <body>
     <button id='btn'>click me to hide text</button>
     <div id='text'>text</div>
+
+    <button id="elem">Autoclick</button>
     <script>
         //         这里有 3 种分配事件处理程序的方式：
 
@@ -28,7 +30,22 @@
             hide_text.style.display = 'none'
             hide_btn.style.display = 'none'
         }
-        
+
+
+
+
+        // 自定义事件
+        let elem_btn = document.getElementById('elem')
+        elem_btn.addEventListener("hello", (event) => {
+            console.log(event.detail.name)
+        })
+        let myEvent = new CustomEvent("hello", {
+            detail: { name: "maktub" }
+        })
+        setTimeout(() => {
+            elem_btn.dispatchEvent(myEvent);
+
+        }, 3000);
     </script>
 </body>
 
