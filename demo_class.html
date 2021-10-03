@@ -13,7 +13,7 @@
         // 原型继承
         let animal = {
             eat: true,
-            jump:null
+            jump: null
         }
 
         let rabbit = {
@@ -30,6 +30,31 @@
         console.log(rabbit.jump)
         // console.log(rabbit.eat, rabbit.jump)
         rabbit.walk()
+
+        // 类
+        class User {
+            constructor(name) {
+                this.name = name
+            }
+            sayHi = () => {
+                console.log('Hi' + this.name)
+            }
+        }
+        let user = new User("frebudd")
+        user.sayHi()
+
+        class Admin extends User {
+
+            check() {
+                console.log('check')
+            }
+            sayHi() {
+                super.sayHi()
+            }
+        }
+        let admin = new Admin('maktub')
+        admin.check()
+        admin.sayHi()
     </script>
 </body>
 
