@@ -39,6 +39,10 @@
             sayHi = () => {
                 console.log('Hi' + this.name)
             }
+            static logout(){
+                console.log('logout')
+            }
+            static adminId = '123456'
         }
         let user = new User("frebudd")
         user.sayHi()
@@ -51,7 +55,16 @@
             sayHi() {
                 super.sayHi()
             }
+            // 静态方法
+            static login = ()=>{
+                console.log('login')
+            }
+
+            
         }
+        Admin.login()
+        Admin.logout()
+        console.log(Admin.adminId)
         let admin = new Admin('maktub')
         admin.check()
         admin.sayHi()
