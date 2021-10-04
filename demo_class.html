@@ -39,7 +39,7 @@
             sayHi = () => {
                 console.log('Hi' + this.name)
             }
-            static logout(){
+            static logout() {
                 console.log('logout')
             }
             static adminId = '123456'
@@ -49,6 +49,9 @@
 
         class Admin extends User {
 
+            // 私有属性
+            #secert = 'sport'
+
             check() {
                 console.log('check')
             }
@@ -56,11 +59,11 @@
                 super.sayHi()
             }
             // 静态方法
-            static login = ()=>{
+            static login = () => {
                 console.log('login')
             }
 
-            
+
         }
         Admin.login()
         Admin.logout()
@@ -68,6 +71,10 @@
         let admin = new Admin('maktub')
         admin.check()
         admin.sayHi()
+        // console.log(admin.#secert)
+
+        // 类检查
+        console.log(admin instanceof Admin)
     </script>
 </body>
 
