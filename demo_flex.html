@@ -8,6 +8,8 @@
     <title>Document</title>
     <style>
         .box {
+            background-color: lightcyan;
+            flex-grow: 2;
             display: flex;
             /* 项目排列方式：column/row + reverse */
             flex-direction: row;
@@ -18,7 +20,8 @@
             /* 项目竖轴排列方式：flex-start/flex-end/center/baseline/stretch */
             align-items: center;
         }
-        .div2{
+
+        .div2 {
             background-color: gray;
             order: 0;
             /* 项目放大 */
@@ -29,18 +32,41 @@
             align-self: flex-end;
             flex-basis: 100px;
         }
-        .div1{
+
+        .div1 {
             background-color: indianred;
             order: 1;
+        }
+
+        .left {
+            display: flex;
+            flex-grow: 1;
+            background-color: indianred;
+        }
+
+        .right {
+            display: flex;
+            flex-grow: 1;
+            background-color: khaki;
+        }
+
+        div {
+            display: flex;
         }
     </style>
 </head>
 
 <body>
-    <div class="box">
-        <div class="div1">123456</div>
-        <div class="div2">654321</div>
+    <div>
+        <div class="left">1</div>
+        <div class="box">
+            <div class="div1">123456</div>
+            <div class="div2">654321</div>
+        </div>
+
+        <div class="right">2</div>
     </div>
+
 </body>
 
 </html>
