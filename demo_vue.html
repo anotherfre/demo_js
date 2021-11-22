@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 绑定值 -->
+        <div>{{message}}</div>
+        <!-- 绑定属性 -->
+        <div><span v-bind:title='message_1'>123</span></div>
+        <!-- vfor -->
+        <div v-for='m in msg_for'>
+            {{m.msg}}
+        </div>
+        <!-- vif  -->
+        <div v-if='seen'>see here</div>
+
+        <!-- 双向绑定 -->
+        <div>
+            <div>{{model_msg}}</div>
+            <input type="text" name="" id="" v-model='model_msg'>
+        </div>
+
+        <!-- 绑定监听 -->
+        <p>{{msg_on}}</p>
+        <button v-on:click='clear'>msg_on</button>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    let app = new Vue({
+        el: '#app',
+        data: {
+            message: 'hello world',
+            message_1: 'message',
+            msg_for: [
+                { msg: '1' },
+                { msg: '2' },
+                { msg: '3' }
+            ],
+            seen: false,
+            model_msg: '',
+            msg_on: '',
+        },
+        methods:{
+            clear: function (params) {
+                this.msg_on = this.msg_on + '123'
+            }
+        }
+    })
+</script>
+
+</html>
